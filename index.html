@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="theme-toggle" class="theme-toggle-btn">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div id="player-container">
+        <audio id="audio-element" hidden></audio>
+
+        <div id="player-controls">
+            <div id="cover-art-container">
+                <img src="" alt="Track Cover Art" id="cover-art">
+            </div>
+
+            <div id="track-info">
+                <h3 id="current-track-title">Loading...</h3>
+                <h5 id="current-track-artist"></h5>
+            </div>
+            
+            <div id="progress-container">
+                <input type="range" id="progress-bar" min="0" max="100" value="0">
+                <div id="time-display">0:00 / 0:00</div>
+            </div>
+
+            <div id="control-buttons">
+                <button id="previous-btn" class="control-btn"><i class="fas fa-backward"></i></button>
+                <button id="play-pause-btn" class="control-btn main-btn"><i class="fas fa-play"></i></button>
+                <button id="next-btn" class="control-btn"><i class="fas fa-forward"></i></button>
+            </div>
+
+            <div id="volume-container">
+                <i class="fas fa-volume-up" id="volume-icon"></i>
+                <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1">
+            </div>
+        </div>
+
+        <div id="song-list-container">
+            <div id="list-header">
+                <h4>Track List</h4>
+                <button id="upload-btn" class="upload-btn" title="Upload songs">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <input type="file" id="song-upload" accept="audio/*" multiple hidden>
+            <ul id="song-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
